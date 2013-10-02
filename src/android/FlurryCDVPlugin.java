@@ -1,4 +1,4 @@
-package com.starstarme.plugin.flurry
+package com.phonegap.pluginis.flurry
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;

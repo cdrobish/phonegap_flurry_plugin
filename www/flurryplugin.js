@@ -4,20 +4,6 @@ var exec = require('cordova/exec');
  */
 function FlurryPlugin() {}
 
-FlurryPlugin.prototype.sayHello = function() {
-  exec(function(result){
-      // result handler
-      alert(result);
-    },
-    function(error){
-      // error handler
-      alert("Error" + error);
-    }, 
-    "FlurryPlugin", 
-    "sayHello", 
-    []
-  );
-}
 FlurryPlugin.prototype.logEvent = function(eventName, parameters, success, error) {
   exec(function(result){
       // result handler
