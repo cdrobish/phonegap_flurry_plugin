@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="com.phonegap.plugins.flurry"
+    version="0.1.0">
+    <name>FlurryPlugin</name>   
+    <!-- ios -->
+    <platform name="ios">    
+        <config-file target="config.xml" parent="/*">
+            <feature name="FlurryPlugin">
+                <param name="ios-package" value="FlurryCDVPlugin" /> 
+            </feature>
+        </config-file>
+        <js-module src="www/flurryplugin.js" name="FlurryPlugin">
+            <clobbers target="flurryPlugin" />
+        </js-module>
+        <header-file src="src/ios/FlurryCDVPlugin.h" />
+        <source-file src="src/ios/FlurryCDVPlugin.m" />
+
+        <header-file src="src/ios/Flurry/Flurry.h" />
+        <source-file src="src/ios/Flurry/libFlurry_4.2.4.a" framework="true"/>
+        <!--framework src="src/ios/Flurry/libFlurry_4.2.4.a" /-->
+
+        <!-- system frameworks -->
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FlurryPlugin">
+                <param name="android-package" value="com.phonegap.plugins.flurry.FlurryCDVPlugin"/>
+            </feature>
+        </config-file>
+        <js-module src="www/flurryplugin.js" name="FlurryPlugin">
+            <clobbers target="flurryPlugin" />
+        </js-module>
+    </platform>
+</plugin>
