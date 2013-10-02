@@ -1,4 +1,4 @@
-package com.phonegap.pluginis.flurry
+package com.phonegap.plugins.flurry
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
