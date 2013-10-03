@@ -3,7 +3,12 @@
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
     id="com.phonegap.plugins.flurry"
     version="0.1.0">
-    <name>FlurryPlugin</name>   
+    <name>FlurryPlugin</name>  
+
+    <js-module src="www/flurryplugin.js" name="FlurryPlugin">
+        <clobbers target="flurryPlugin" />
+    </js-module> 
+
     <!-- ios -->
     <platform name="ios">    
         <config-file target="config.xml" parent="/*">
@@ -11,9 +16,7 @@
                 <param name="ios-package" value="FlurryCDVPlugin" /> 
             </feature>
         </config-file>
-        <js-module src="www/flurryplugin.js" name="FlurryPlugin">
-            <clobbers target="flurryPlugin" />
-        </js-module>
+
         <header-file src="src/ios/FlurryCDVPlugin.h" />
         <source-file src="src/ios/FlurryCDVPlugin.m" />
 
@@ -29,13 +32,16 @@
 
     <!-- android -->
     <platform name="android">
+
+        <!-- cordova plugin src files -->
+        <source-file src="src/android/FlurryCDVPlugin.java" target-dir="src/com/phonegap/plugins/flurry" />
+        <source-file src="src/android/Flurry/Flurry_3.2.2.jar" target-dir="libs/" />
+
         <config-file target="config.xml" parent="/*">
             <feature name="FlurryPlugin">
                 <param name="android-package" value="com.phonegap.plugins.flurry.FlurryCDVPlugin"/>
             </feature>
-        </config-file>
-        <js-module src="www/flurryplugin.js" name="FlurryPlugin">
-            <clobbers target="flurryPlugin" />
-        </js-module>
+        </config-file>  
+
     </platform>
 </plugin>
